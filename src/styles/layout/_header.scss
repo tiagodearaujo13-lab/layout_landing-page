@@ -1,0 +1,30 @@
+// HEADER
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  width: 100%;
+  max-width: none;
+
+  @include container-padding;
+}
+
+.logo {
+  display: block;
+  width: clamp(6rem, 15vw, 11.7rem);
+  height: clamp(1.8rem, 4.5vw, 3.5rem);
+  background: url('../../icon/Vector.svg') no-repeat center / contain;
+  flex-shrink: 0;
+  transition: opacity $transition-base ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

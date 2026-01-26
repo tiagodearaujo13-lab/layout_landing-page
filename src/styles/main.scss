@@ -1,3 +1,37 @@
-body {
-  margin: 0;
-}
+// MYBIKE \- Arquivo Princinpal de Estilo
+
+// ABSTRACTS
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// BASE
+
+@import 'base/reset';
+
+// LAYOUT
+
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/mobile-menu';
+@import 'layout/footer';
+
+// COMPONENTES
+
+@import 'components/buttons';
+@import 'components/bike-card';
+
+// SECTIONS
+
+@import 'sections/hero';
+@import 'sections/section';
+@import 'sections/move-free';
+@import 'sections/bikes-grid';
+@import 'sections/detail';
+@import 'sections/contact';
+
+// UTILITIES
+
+@import 'utilities/animations';
+@import 'utilities/accessibility';
