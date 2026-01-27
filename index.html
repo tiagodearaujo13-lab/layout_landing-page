@@ -14,6 +14,12 @@
     <title>MyBIKE | Take the Streets</title>
 
     <link
+      rel="icon"
+      href="./src/icon/Logo-wt.png"
+      type="image/png"
+    />
+
+    <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
     />
@@ -323,12 +329,12 @@
         <div class="contact__container">
           <h2 class="section__title">Contact us</h2>
 
-          <form class="contact__form">
+          <form class="contact__form" onsubmit="this.reset(); return false;">
             <div class="form-group">
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Ex: John"
                 class="contact__input"
                 required
               />
@@ -337,7 +343,7 @@
               <input
                 type="text"
                 name="surname"
-                placeholder="Surname"
+                placeholder="Ex: Doe"
                 class="contact__input"
               />
             </div>
@@ -345,7 +351,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Ex: john@example.com"
                 class="contact__input"
                 required
               />
@@ -353,7 +359,7 @@
             <div class="form-group">
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder="Your message here..."
                 rows="4"
                 class="contact__input contact__textarea"
               ></textarea>
@@ -371,11 +377,29 @@
 
     <footer class="footer">
       <div class="footer__container">
-        <img
-          src="./src/icon/Logo-wt.png"
-          alt="MyBIKE Logo White"
-          class="footer__logo"
-        />
+        <a href="#home" class="footer__logo-link">
+          <img
+            src="./src/icon/Logo-wt.png"
+            alt="MyBIKE Logo White"
+            class="footer__logo"
+          />
+        </a>
+
+        <div class="footer__contacts" style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin: 1rem 0;">
+          <a href="tel:+1234567890" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;" class="footer__link">
+             <img src="./src/icon/Icon-Phone-call.png" alt="Phone" style="height: 16px; filter: invert(1);" />
+             +1 234 567 890
+          </a>
+
+          <a href="https://goo.gl/maps/example" target="_blank" style="color: inherit; text-decoration: none;" class="footer__link">
+            123 Bike Street, City
+          </a>
+
+          <a href="mailto:info@mybike.com" style="color: inherit; text-decoration: none;" class="footer__link">
+            info@mybike.com
+          </a>
+        </div>
+
         <p class="footer__copy">&copy; 2023 MyBIKE. All rights reserved.</p>
       </div>
     </footer>

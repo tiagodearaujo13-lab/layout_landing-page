@@ -1,0 +1,15 @@
+.mobile-menu {
+  // ... (código existente)
+  overflow-y: auto; // Permite rolagem se a tela for pequena
+
+  // Cabeçalho do menu (logo + botão fechar)
+  &__header {
+    // ... (código existente)
+    position: sticky; // Mantém o X visível ao rolar
+    top: 0;
+    z-index: 10;
+    background-color: $color-menu-bg; // Garante que o conteúdo não passe por trás transparente
+    padding-bottom: 20px; // Um pouco de respiro se necessário
+    margin-bottom: 40px; // Ajuste a margem original para compensar
+  }
+}
