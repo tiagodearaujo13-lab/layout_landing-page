@@ -1,37 +1,13 @@
-// MYBIKE \- Arquivo Princinpal de Estilo
+// 1. Base
+@use 'base/reset';
+@use 'base/typography';
 
-// ABSTRACTS
+// 2. Components
+@use 'components/cards';
 
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-
-// BASE
-
-@import 'base/reset';
-
-// LAYOUT
-
-@import 'layout/container';
-@import 'layout/header';
-@import 'layout/nav';
-@import 'layout/mobile-menu';
-@import 'layout/footer';
-
-// COMPONENTES
-
-@import 'components/buttons';
-@import 'components/bike-card';
-
-// SECTIONS
-
-@import 'sections/hero';
-@import 'sections/section';
-@import 'sections/move-free';
-@import 'sections/bikes-grid';
-@import 'sections/detail';
-@import 'sections/contact';
-
-// UTILITIES
-
-@import 'utilities/animations';
-@import 'utilities/accessibility';
+// 3. Layout Sections
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/intro';
+@use 'layout/details';
+@use 'layout/contact';

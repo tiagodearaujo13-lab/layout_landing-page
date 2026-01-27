@@ -6,7 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>My Bike - Take the Streets</title>
+
+    <meta
+      name="description"
+      content="MyBIKE - High performance electric bikes designed for urban freedom."
+    />
+    <title>MyBIKE | Take the Streets</title>
 
     <link
       rel="preconnect"
@@ -15,7 +20,7 @@
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
+      crossorigin
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -24,340 +29,355 @@
 
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
+      href="./src/styles/main.scss"
     />
+
     <script
       type="module"
-      src="/src/scripts/main.js"
+      src="./src/scripts/main.js"
       defer
     ></script>
   </head>
   <body>
-    <div class="mybike-conteiner">
-      <section class="hero">
-        <header class="header">
-          <a
-            href="#"
-            class="logo"
-            aria-label="MyBike Home"
-          >
-            <img
-              src="./src/icon/Logo-wt.png"
-              alt="MyBike Logo"
-            />
-          </a>
-          <nav class="nav">
-            <a
-              href="tel:+1234555555555"
-              class="nav__phone"
-              aria-label="Call us"
-            >
-              <span class="nav__phone-number">+1 234 5555-55-55</span>
-              <img
-                src="./src/icon/Icon-Phone-call.png"
-                alt="Phone call"
-                class="nav__icon"
-              />
-            </a>
-            <button
-              type="button"
-              class="nav__menu-btn"
-              id="menuOpen"
-              aria-label="Open menu"
-              aria-expanded="false"
-            >
-              <span class="nav__menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </button>
-          </nav>
-        </header>
-        <img
-          class="hero__image"
-          src="./src/img/hero-bg.jpg"
-          alt="Cyclist on urbarn street"
-        />
-        <h1 class="hero__title fade-in">Take the Street</h1>
-      </section>
-      <div
-        class="mobile-menu"
-        id="mobileMenu"
-        aria-hidden="true"
-      >
-        <div class="mobile-menu__header">
-          <a
-            href="#"
-            class="mobile-menu__logo"
-            aria-label="MyBike Home"
-          >
-            <img
-              src="./src/icon/Logo.png"
-              alt="MyBike Logo Dark"
-              class="mobile-menu__logo-dark"
-            />
-            <img
-              src="./src/icon/Vector.svg"
-              alt="x"
-              class="mobile-menu__logo-x"
-            />
-          </a>
-        </div>
-        <nav class="mobile-menu__nav">
-          <a
-            href="#"
-            class="mobile-menu__link"
-            aria-label="Home"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            class="mobile-menu__link"
-            aria-label="About us"
-          >
-            About us
-          </a>
-          <a
-            href="#"
-            class="mobile-menu__link"
-            aria-label="Compare bikes"
-          >
-            Compare bikes
-          </a>
-          <a
-            href="#"
-            class="mobile-menu__link"
-            aria-label="Details"
-          >
-            Details
-          </a>
-          <a
-            href="#"
-            class="mobile-menu__link"
-            aria-label="Contact"
-          >
-            Contact
-          </a>
+    <input
+      type="checkbox"
+      id="nav-toggle"
+      class="nav-toggle-checkbox visually-hidden"
+    />
+
+    <header class="header">
+      <div class="header__container">
+        <a
+          href="#home"
+          class="header__logo-link"
+          aria-label="MyBike Home"
+        >
+          <img
+            src="./src/icon/Logo-wt.png"
+            alt="MyBIKE Logo"
+            class="header__logo"
+          />
+        </a>
+
+        <nav
+          class="header__nav"
+          aria-label="Main Navigation"
+        >
+          <ul class="header__menu">
+            <li class="header__item">
+              <a
+                href="#home"
+                class="header__link"
+              >
+                Home
+              </a>
+            </li>
+            <li class="header__item">
+              <a
+                href="#product"
+                class="header__link"
+              >
+                Product
+              </a>
+            </li>
+            <li class="header__item">
+              <a
+                href="#compare"
+                class="header__link"
+              >
+                Compare
+              </a>
+            </li>
+            <li class="header__item">
+              <a
+                href="#contact"
+                class="header__link"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
         </nav>
-        <div class="mobile-menu__footer">
-          <a
-            href="tel:+12345555555"
-            class="mobile-menu__phone"
-            aria-label="Book a test ride"
-          >
-            +1 234 5555-55-55
-          </a>
-          <a
-            href="#"
-            class="mobile-menu__cta"
-            aria-label="Book a test ride"
-          >
-            Book a test ride
-          </a>
-        </div>
+
+        <label
+          for="nav-toggle"
+          class="header__menu-btn"
+          aria-label="Open menu"
+        >
+          <img
+            src="./src/icon/Icon-Burger-menu.png"
+            alt="Open Menu"
+          />
+        </label>
       </div>
-      <section class="section section--move-free scroll-reavel">
-        <div class="move-free">
-          <h2 class="move-free__title">Move Free</h2>
-          <p class="move-free__text">
+    </header>
+
+    <div class="mobile-menu">
+      <div class="mobile-menu__header">
+        <img
+          src="./src/icon/Logo.png"
+          alt="MyBIKE Logo"
+        />
+
+        <label
+          for="nav-toggle"
+          class="mobile-menu__close"
+          aria-label="Close menu"
+        >
+          <img
+            src="./src/icon/Vector.svg"
+            alt="Close Menu"
+          />
+        </label>
+      </div>
+
+      <nav class="mobile-menu__nav">
+        <a
+          href="#home"
+          class="mobile-menu__link"
+        >
+          Home
+        </a>
+        <a
+          href="#product"
+          class="mobile-menu__link"
+        >
+          Product
+        </a>
+        <a
+          href="#compare"
+          class="mobile-menu__link"
+        >
+          Compare
+        </a>
+        <a
+          href="#contact"
+          class="mobile-menu__link"
+        >
+          Contact
+        </a>
+      </nav>
+    </div>
+
+    <main>
+      <section
+        class="hero"
+        id="home"
+      >
+        <img
+          class="hero__bg-image"
+          src="./src/img/hero-bg.jpg"
+          alt="Urban Cyclist"
+        />
+        <div class="hero__content">
+          <h1 class="hero__title fade-in">Take the Streets</h1>
+        </div>
+      </section>
+
+      <section class="intro">
+        <div class="intro__container">
+          <h2 class="intro__title">Move Free</h2>
+          <p class="intro__text">
             Shift your ride, not gears. Find the fastest way to move in the city
-            as the bike adapts intuitively to power the speed you need.
+            as the bike adapts to your intuitive flow.
           </p>
         </div>
       </section>
+
       <section
-        class="section section--compare scroll-reavel"
+        class="compare"
         id="compare"
       >
-        <h2 class="section__title">Compare Bikes</h2>
-        <div class="bike-grid">
-          <article class="bike-card">
-            <img
-              class="bike-card_image"
-              src="./src/img/sporty-4.png"
-              alt="Sporty 4 bike"
-            />
-            <h3 class="bike-card__name">Sporty-4</h3>
-            <p class="bike-card__description">
-              The iconic frame brought to a new performance height as a sporty,
-              active ride.
-            </p>
-            <p class="bike-card__price">$ 2 590</p>
-          </article>
-          <article class="bike-card">
-            <img
-              class="bike-card_image"
-              src="./src/img/ride-in-town-st.png"
-              alt="Ride in town ST"
-            />
-            <h3 class="bike-card__name">Ride in town ST</h3>
-            <p class="bike-card__description">
-              An open frame for an upright riding position as the most
-              comfortable ride in town.
-            </p>
-            <p class="bike-card__price">$ 2 590</p>
-          </article>
+        <div class="compare__container">
+          <h2 class="section__title">Compare Bikes</h2>
 
-          <article class="bike-card">
-            <img
-              class="bike-card_image"
-              src="./src/img/agile-ride-3.png"
-              alt="Agile ride 3"
-            />
-            <h3 class="bike-card__name">Agile ride 3</h3>
-            <p class="bike-card__description">
-              The lightweight frame that has earned its street tread as a sleek,
-              agile ride.
-            </p>
-            <p class="bike-card__price">$ 2 590</p>
-          </article>
+          <div class="compare__grid">
+            <article class="bike-card">
+              <div class="bike-card__image-wrapper">
+                <img
+                  src="./src/img/ride-in-town-st.png"
+                  alt="Schindelhauer Bike"
+                  class="bike-card__image"
+                />
+              </div>
+              <div class="bike-card__info">
+                <h3 class="bike-card__model">Schindelhauer</h3>
+                <p class="bike-card__specs">E-Bike, Automatic</p>
+                <span class="bike-card__price">€ 4.500</span>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <div class="bike-card__image-wrapper">
+                <img
+                  src="./src/img/sporty-4.png"
+                  alt="VanMoof S3 Bike"
+                  class="bike-card__image"
+                />
+              </div>
+              <div class="bike-card__info">
+                <h3 class="bike-card__model">VanMoof S3</h3>
+                <p class="bike-card__specs">E-Bike, Automatic</p>
+                <span class="bike-card__price">€ 3.200</span>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <div class="bike-card__image-wrapper">
+                <img
+                  src="./src/img/agile-ride-3.png"
+                  alt="Cowboy 4 Bike"
+                  class="bike-card__image"
+                />
+              </div>
+              <div class="bike-card__info">
+                <h3 class="bike-card__model">Cowboy 4</h3>
+                <p class="bike-card__specs">E-Bike, Electric</p>
+                <span class="bike-card__price">€ 4.790</span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
+
       <section
-        class="section section--details scroll-reavel"
-        id="details"
+        class="details"
+        id="product"
       >
-        <h2 class="section__title">The Details</h2>
-        <article class="details details__image">
-          <img
-            src="./src/img/auto-unlock1.png"
-            alt="Auto unlock"
-            class="details__image details__image--main"
-          />
-          <img
-            src="./src/img/auto-unlock2.png"
-            alt="Bike detail"
-            class="details__image details__image--side"
-          />
-          <h3 class="detail__title">Auto Unlock</h3>
-          <p class="detail__text">
-            The app senses when you're nearby to unlock automatically. GPS
-            tracking so you know where your bike is and can track it anytime.
-          </p>
-        </article>
-        <article class="details details__image">
-          <img
-            src="./src/img/rage-integrated1.png"
-            alt="Battery detail"
-            class="details__image details__image--side"
-          />
-          <img
-            src="./src/img/range-integrated2.png"
-            alt="Integrated lights"
-            class="details__image details__image--main"
-          />
-          <h3 class="detail__title">Range & Integrated lights</h3>
-          <p class="detail__text">
-            The removable battery has up to 70km battery autonomy and weighs
-            only 2.4 kg. Lights integrated into the frame give you always-on
-            visibility day and night.
-          </p>
-        </article>
-        <article class="details details__image">
-          <img
-            src="./src/img/hydraulic-disc.png"
-            alt="Lightweight frame"
-            class="details__image details__image--main"
-          />
-          <img
-            src="./src/img/hydraulic-disc2.png"
-            alt="Hydraulic dis brakes"
-            class="details__image details__image--side"
-          />
-          <h3 class="detail__title">Hydraulic disc brakes & Lightweight</h3>
-          <p class="detail__text">
-            Brakes with total stopping power the second you make contact. The
-            removable battery has up to 70km battery autonomy and weighs only
-            2.4 kg. Lights integrated into the frame give you always-on
-            visibility day and night.
-          </p>
-        </article>
-        <button
-          type="button"
-          class="btn btn--primary"
-        >
-          Explore
-        </button>
-      </section>
-      <section
-        class="section section--contact scroll-reavel"
-        id="contact"
-      >
-        <h2 class="section__title">Contact us</h2>
-        <div
-          class="contact__form"
-          onsubmit="this.reset() return false"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            aria-label="Name"
-            required
-            class="contact__input"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            aria-label="Email"
-            required
-            class="contact__input"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            aria-label="Message"
-            rows="5"
-            required
-            class="contact__textarea"
-          ></textarea>
-          <button
-            type="submit"
-            class="btn btn--primary btn__full"
-          >
-            Send
-          </button>
-        </div>
-        <address class="contact__info">
-          <div class="contact__item">
-            <span class="contact__label">Phone</span>
-            <a
-              href="tel:+123455555555"
-              class="contact__link"
-            >
-              +1 234 5555-55-55
-            </a>
+        <div class="details__container">
+          <h2 class="section__title">The Details</h2>
+
+          <div class="details__grid">
+            <article class="feature-card">
+              <img
+                src="./src/img/auto-unlock1.png"
+                alt="Auto Unlock"
+                class="feature-card__image"
+              />
+              <div class="feature-card__overlay">
+                <h3 class="feature-card__title">Auto Unlock</h3>
+                <p class="feature-card__desc">
+                  No need for keys, the bike recognizes you.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <img
+                src="./src/img/hydraulic-disc.png"
+                alt="Hydraulic Disc"
+                class="feature-card__image"
+              />
+              <div class="feature-card__overlay">
+                <h3 class="feature-card__title">Hydraulic Disc</h3>
+                <p class="feature-card__desc">
+                  Powerful braking in all weather conditions.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <img
+                src="./src/img/rage-integrated1.png"
+                alt="Integrated Lights"
+                class="feature-card__image"
+              />
+              <div class="feature-card__overlay">
+                <h3 class="feature-card__title">Integrated Lights</h3>
+                <p class="feature-card__desc">
+                  See and be seen with built-in LED system.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <img
+                src="./src/img/auto-unlock2.png"
+                alt="Lightweight Frame"
+                class="feature-card__image"
+              />
+              <div class="feature-card__overlay">
+                <h3 class="feature-card__title">Lightweight Frame</h3>
+                <p class="feature-card__desc">
+                  Aerodynamic design for maximum speed.
+                </p>
+              </div>
+            </article>
           </div>
-          <div class="contact__item">
-            <span class="contact__label">Email</span>
-            <a
-              href="mailto:hello@miami.com"
-              class="contact__link"
-            >
-              hello@miami.com
-            </a>
-          </div>
-          <div class="contact__item">
-            <span class="contact__label">Address</span>
+
+          <div class="details__action">
             <a
               href="#"
-              class="contact__link"
+              class="btn btn--primary"
             >
-              400 first ave. suite 700 Minneapolis, MN 55401
+              View all specs
             </a>
           </div>
-        </address>
+        </div>
       </section>
-      <footer class="footer">
+
+      <section
+        class="contact"
+        id="contact"
+      >
+        <div class="contact__container">
+          <h2 class="section__title">Contact us</h2>
+
+          <form class="contact__form">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                class="contact__input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="surname"
+                placeholder="Surname"
+                class="contact__input"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="contact__input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows="4"
+                class="contact__input contact__textarea"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn--white contact__submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
         <img
-          src="./src/img/footer-bg.png"
-          alt="Footer background"
-          class="footer__image"
+          src="./src/icon/Logo-wt.png"
+          alt="MyBIKE Logo White"
+          class="footer__logo"
         />
-      </footer>
-    </div>
+        <p class="footer__copy">&copy; 2023 MyBIKE. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

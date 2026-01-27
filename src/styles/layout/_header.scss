@@ -1,32 +1,124 @@
-// HEADER
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .header {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  left: 0;
   width: 100%;
-  max-width: none;
+  z-index: 10;
+  padding: 1.5rem 0;
 
-  @include container-padding;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $gutter;
+  }
+
+  &__logo {
+    height: 24px;
+    width: auto;
+    display: block;
+  }
+
+  &__nav {
+    display: none;
+
+    @include mq(desktop) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    color: $color-white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-text-grey;
+    }
+  }
+
+  // O Botão Hamburguer (Label)
+  &__menu-btn {
+    display: block;
+    cursor: pointer; // Importante para parecer clicável
+
+    @include mq(desktop) {
+      display: none;
+    }
+
+    img {
+        filter: invert(1);
+    }
+  }
 }
 
-.logo {
-  display: block;
-  width: clamp(6rem, 15vw, 11.7rem);
-  height: clamp(1.8rem, 4.5vw, 3.5rem);
-  background: url('../../icon/Vector.svg') no-repeat center / contain;
-  flex-shrink: 0;
-  transition: opacity $transition-base ease;
+/* --- LOGICA DO MENU MOBILE (PURE CSS) --- */
 
-  &:hover {
-    opacity: 0.8;
+// Estilo Base do Menu (Escondido)
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-black;
+  z-index: 100; // Bem alto para cobrir tudo
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  // Estado Inicial: Escondido e Invisível
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+
+  // CORRIGIDO: Arredondado para 0.17
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.17, 1);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    img {
+      height: 24px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-text-grey;
+    }
   }
 }
