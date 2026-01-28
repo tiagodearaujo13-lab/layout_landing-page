@@ -1,147 +1,29 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-
 .header {
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  z-index: 50;
-  padding: 1.5rem 0;
-  background: transparent;
+  right: 0;
+  top: 0;
+  z-index: 100; // Fica acima do conteúdo
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: clamp(1.5rem, 3vw, 2.25rem); // Padding vertical responsivo
+  width: 100%; // Largura total
+  max-width: none; // Remove limite de largura
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: $container-width;
-    margin: 0 auto;
-    padding: 0 $gutter;
-  }
+  @include container-padding; // Usa o mesmo padding das seções
+}
 
-  &__logo {
-    height: 28px;
-    width: auto;
-    display: block;
-  }
+// Logo da marca
+.logo {
+  display: block;
+  width: clamp(6rem, 15vw, 11.7rem); // Largura responsiva
+  height: clamp(1.8rem, 4.5vw, 3.5rem); // Altura responsiva
+  background: url('../images/mybike.svg') no-repeat center / contain;
+  flex-shrink: 0; // Não encolhe em flexbox
+  transition: opacity $transition-base ease;
 
-  // --- NAVEGAÇÃO DESKTOP ---
-  &__nav {
-    display: none;
-
-    @include mq(desktop) {
-      display: block;
-    }
-  }
-
-  &__menu {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  &__link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: $color-white;
-    text-transform: uppercase;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-
-    // Linha animada
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: $color-primary;
-      transition: width 0.3s ease;
-    }
-
-    // Estado Hover
-    &:hover {
-      color: $color-primary;
-
-      &::after {
-        width: 100%;
-      }
-    }
-  }
-
-  // --- AÇÕES ---
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  // 1. Menu Hamburguer (Movido para cima para corrigir erro de especificidade)
-  &__toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    display: block;
-    transition: transform 0.2s;
-
-    img {
-      height: 24px;
-      width: auto;
-      filter: invert(1);
-    }
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    @include mq(desktop) {
-      display: none;
-    }
-  }
-
-  // 2. Botão de Telefone (Agora vem DEPOIS, mantendo a ordem crescente de especificidade)
-  &__phone-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: $color-white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-
-    // Texto do número
-    .header__phone-number {
-      display: none;
-      font-weight: 600;
-      white-space: nowrap;
-
-      @include mq(tablet) {
-        display: block;
-      }
-    }
-
-    // Imagem base
-    img {
-      height: 20px;
-      width: auto;
-      filter: invert(1);
-      transition: transform 0.3s ease;
-    }
-
-    // Hover do botão e animação da imagem
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: $color-primary;
-
-      img {
-        transform: scale(1.1) rotate(-10deg);
-        filter: invert(0.8) sepia(1) saturate(5) hue-rotate(350deg);
-      }
-    }
+  &:hover {
+    opacity: 0.8;
   }
 }

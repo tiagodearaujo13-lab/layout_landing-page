@@ -1,25 +1,43 @@
-// 1. Base
-@use 'base/reset';
-@use 'base/typography';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
-// 2. Components
-@use 'components/cards';
+// --------------------------------------------
+// BASE
+// Reset CSS e estilos fundamentais
+// --------------------------------------------
+@import 'base/reset';
 
-// 3. Layout Sections
-@use 'layout/header';
-@use 'layout/hero';
-@use 'layout/intro';
-@use 'layout/details';
-@use 'layout/contact';
+// --------------------------------------------
+// LAYOUT
+// Estrutura e layout da página
+// --------------------------------------------
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/mobile-menu';
+@import 'layout/footer';
 
-// CHECKLIST ITEM 11: Disable page scrolling under the menu
-// CORREÇÃO: Usando a classe .nav-toggle-checkbox em vez do ID #nav-toggle para passar no teste
-body:has(.nav-toggle-checkbox:checked) {
-  overflow: hidden;
-}
+// --------------------------------------------
+// COMPONENTS
+// Componentes reutilizáveis
+// --------------------------------------------
+@import 'components/buttons';
+@import 'components/bike-card';
 
-// Fallback para navegadores que não suportam :has()
-.nav-toggle-checkbox:checked ~ main,
-.nav-toggle-checkbox:checked ~ .footer {
-  pointer-events: none; // Impede cliques fora do menu
-}
+// --------------------------------------------
+// SECTIONS
+// Seções específicas da página
+// --------------------------------------------
+@import 'sections/hero';
+@import 'sections/section';
+@import 'sections/move-free';
+@import 'sections/bikes-grid';
+@import 'sections/detail';
+@import 'sections/contact';
+
+// --------------------------------------------
+// UTILITIES
+// Classes utilitárias e helpers
+// --------------------------------------------
+@import 'utilities/animations';
+@import 'utilities/accessibility';
