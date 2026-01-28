@@ -48,8 +48,8 @@
     display: block;
     width: 187px;
     height: 56px;
-    background: url('../images/mybike-dark.svg') no-repeat center / contain;
-    background-image: url('../images/mybike.svg');
+    background: url('../icon/Logo-dark.svg') no-repeat center / contain;
+    background-image: url('../icon/Logo.svg');
     filter: invert(1); // Inverte para versão escura
 
     @media (max-width: $bp-md) {

@@ -19,7 +19,7 @@
   display: block;
   width: clamp(6rem, 15vw, 11.7rem); // Largura responsiva
   height: clamp(1.8rem, 4.5vw, 3.5rem); // Altura responsiva
-  background: url('../images/mybike.svg') no-repeat center / contain;
+  background: url('../icon/Logo.svg') no-repeat center / contain;
   flex-shrink: 0; // Não encolhe em flexbox
   transition: opacity $transition-base ease;
 
